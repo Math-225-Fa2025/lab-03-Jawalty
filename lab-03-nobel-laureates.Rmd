@@ -1,11 +1,11 @@
 ---
 title: "Lab 03 - Nobel laureates"
-author: "Your Name"
+author: "Jackson Walterman"
 output: 
-  tufte::tufte_html:
-    css: ../lab.css
-    tufte_variant: "envisioned"
-    highlight: pygments
+ # tufte::tufte_html:
+  #  css: ../lab.css
+  #  tufte_variant: "envisioned"
+   # highlight: pygments
   tufte::tufte_handout:
     latex_engine: xelatex
     highlight: pygments
@@ -118,11 +118,11 @@ There are some observations in this dataset that we will exclude from our analys
 -   laureates who are people as opposed to organizations (organizations are denoted with `"org"` as their `gender`)
 -   laureates who are still alive (their `died_date` is `NA`)
 
-```{r echo=FALSE}
+```{r }
 nobel_living <- nobel %>%
   filter(
     !is.na(country),
-    gender != "org",
+    gender == "org",
     is.na(died_date)
   )
 ```
